@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<project name="Deploy PetCatalog"  basedir="." default="run-deploy">
+<target name="run-deploy">
+        <exec executable="asadmin.bat">
+            <arg line="deploy PetCatalog.war" />  
+        </exec>      
+</target>
+</project>

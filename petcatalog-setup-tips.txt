@@ -1,0 +1,24 @@
+#start mysql
+mysqld
+
+#create database in mysql
+mysql -u root -p
+create database petcatalog
+
+#run catalog.sql script
+
+#start glassfish
+asadmin start-domain --verbose
+
+#configure JDBC Connection Pool and Resources on glassfish (how do you automate this?)
+#asadmin --host yourhost --port yourport add-resources sun-resources.xml
+asadmin add-resources glassfish-resources.xml
+
+#need to provide glassfish with MySQL JDBC connector jar
+#taking shortcut by putting it directly in lib
+#optionally we may be able to stick the jar in the domain area instead of global\glassfish3\glassfish\domains\domain1\lib\ext
+copy mysql-connector-java-5.1.21-bin.jar
+
+
+Create tables
+
